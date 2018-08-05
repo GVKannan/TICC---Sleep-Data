@@ -1,0 +1,17 @@
+Hi!
+Few important information to be noted while running our code:
+* David Hallac and co has written the code for Linux/Ubuntu hence you need to add the following to the code while executing TICC in Windows:
+"if __name__ == '__main__':"
+
+* We made few adjustment to the orginal code so that we could work on it - TICC_solver.py
+
+try:
+                val = optRes[cluster].get()
+            except np.linalg.LinAlgError:
+                print("Linear Algebra Error Raised! Moving to next iteration")
+                time.sleep(2)
+                continue
+
+The reason why we had to do was because sometimes the data calculation doesn't converge to find solutions hence we skip that iteration and move ahead.
+
+* Finally, in the fit() function in TICC_solver.py, the return function also returns the bic value after fitting for experimental purpose.
